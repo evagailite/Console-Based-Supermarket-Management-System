@@ -1,4 +1,6 @@
-package main;
+package main.controller;
+
+import main.repository.DataBase;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;

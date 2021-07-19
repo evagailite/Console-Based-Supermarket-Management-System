@@ -1,4 +1,7 @@
-package main;
+package main.entity;
+
+import main.types.Category;
+import main.types.ProductUnit;
 
 public class Product {
 

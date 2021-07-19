@@ -1,4 +1,9 @@
-package main;
+package main.controller;
+
+import main.repository.DataBase;
+import main.entity.Sale;
+import main.entity.Users;
+import main.types.UserType;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;

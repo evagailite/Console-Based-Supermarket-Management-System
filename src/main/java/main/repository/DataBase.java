@@ -1,4 +1,8 @@
-package main;
+package main.repository;
+
+import main.types.Category;
+import main.types.ProductUnit;
+import main.types.UserType;
 
 import java.sql.*;
 import java.util.Scanner;

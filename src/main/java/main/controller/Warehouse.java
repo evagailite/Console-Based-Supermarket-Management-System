@@ -1,4 +1,10 @@
-package main;
+package main.controller;
+
+import main.repository.DataBase;
+import main.entity.Product;
+import main.entity.Users;
+import main.types.Category;
+import main.types.ProductUnit;
 
 import java.util.Date;
 import java.util.Scanner;

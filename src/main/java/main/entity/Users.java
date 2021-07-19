@@ -1,4 +1,6 @@
-package main;
+package main.entity;
+
+import main.types.UserType;
 
 public class Users {
     private String username;

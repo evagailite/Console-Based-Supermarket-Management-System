@@ -1,5 +1,14 @@
 package main;
 
+import main.controller.Menu;
+import main.controller.ShoppingBasket;
+import main.controller.Wallet;
+import main.controller.Warehouse;
+import main.entity.Product;
+import main.entity.Sale;
+import main.entity.Users;
+import main.repository.DataBase;
+
 public class Main {
     public static void main(String[] args) {
 
