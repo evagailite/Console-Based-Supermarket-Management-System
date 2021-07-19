@@ -123,7 +123,7 @@ public class ShoppingBasket {
                 dataBase.editQuantity(newQuantity, sale.getId());
 
                 dataBase.createSale(orderID, sale.getName(), sale.getQuantity(),
-                        sale.getPrice(), sale.getUsername(), "2021-07-18");
+                        sale.getPrice(), sale.getUsername(), "2021-07-19");
             }
             System.out.println("ORDER ID: " + orderID);
             addProductInTheBasket();

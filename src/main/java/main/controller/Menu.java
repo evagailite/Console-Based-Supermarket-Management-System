@@ -1,8 +1,8 @@
 package main.controller;
 
-import main.repository.DataBase;
 import main.entity.Sale;
 import main.entity.Users;
+import main.repository.DataBase;
 import main.types.UserType;
 
 import java.text.DecimalFormat;
@@ -65,7 +65,6 @@ public class Menu {
             String username = scanner.nextLine();
             System.out.print("Enter password: ");
             String password = scanner.nextLine();
-
             if ((dataBase.checkUsername(username).contains(username)) &&
                     (dataBase.checkPassword(password).contains(password) &&
                             (dataBase.checkUserType(username, password).contains(String.valueOf(userType))))) {

@@ -20,14 +20,6 @@ public class Warehouse {
         this.dataBase = dataBase;
     }
 
-    public void setActiveUser(Users activeUsers) {
-        this.users = users;
-    }
-
-    public Users getActiveUsers() {
-        return users;
-    }
-
     public void addProduct() {
         try {
             System.out.print("Enter product name: ");
@@ -219,15 +211,19 @@ public class Warehouse {
     public void salesReport() {
         Date date = new Date();
         System.out.println(date);
-
         System.out.println("\nTop 3 best-selling products: ");
         dataBase.bestSellingProduct();
-
         System.out.println("\nGross sales of all orders with VAT included: $" + dataBase.sumTotalPurchase());
         System.out.println("\nIn total " + dataBase.countOrders() + " orders were placed in the Supermarket:");
-
         dataBase.displayAllSalesReport();
 
+    }
 
+    public void setActiveUser(Users activeUsers) {
+        this.users = users;
+    }
+
+    public Users getActiveUsers() {
+        return users;
     }
 }
