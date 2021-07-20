@@ -94,6 +94,7 @@ public class Menu {
             if (choice.equals("1")) {
                 createUser(userType);
             } else if (choice.equals("2")) {
+                shoppingBasket.clearShoppingBasket();
                 start();
             } else {
                 invalidInputMessage();
@@ -212,7 +213,7 @@ public class Menu {
     }
 
     private void quit() {
-        System.out.println("Thank you for visiting SuperMarket!");
+        // System.out.println("Thank you for visiting SuperMarket!");
         System.out.println("Application has stopped working!");
         System.exit(0);
     }
@@ -446,6 +447,7 @@ public class Menu {
                 break;
             case "5":
                 shoppingBasket.clearShoppingBasket();
+                System.out.println("Shopping Basket successfully cleared!");
                 break;
             case "6":
                 shoppingBasket.checkout(username);

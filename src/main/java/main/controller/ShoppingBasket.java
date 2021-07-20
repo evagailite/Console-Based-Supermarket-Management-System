@@ -1,21 +1,22 @@
 package main.controller;
 
-import main.repository.DataBase;
 import main.entity.Sale;
+import main.repository.DataBase;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Locale;
 import java.util.Scanner;
 
 public class ShoppingBasket {
     private DecimalFormat df = new DecimalFormat("0.00");
-    private final Scanner scanner = new Scanner(System.in);
+    private Scanner scanner = new Scanner(System.in);
     private Sale sale;
     private ArrayList<Sale> totalBasket = new ArrayList<>();
-    private final Warehouse warehouse;
-    private final DataBase dataBase;
+    private Warehouse warehouse;
+    private DataBase dataBase;
 
     public ShoppingBasket(Warehouse warehouse, DataBase dataBase, Sale sale) {
         this.warehouse = warehouse;
@@ -57,19 +58,29 @@ public class ShoppingBasket {
 
     public void removeFromBasket() {
         try {
-            addProductInTheBasket();
+            displayBasket();
             System.out.print("Please enter PRODUCT_ID to remove the product from the Shopping Basket: ");
             int id = Integer.parseInt(scanner.nextLine());
-            if (totalBasket.contains(id)) {
-                totalBasket.remove(id);
-            } else {
-                warehouse.notExistingIDMessage(id);
-                removeFromBasket();
+            for (Iterator<Sale> iterator = totalBasket.iterator(); iterator.hasNext(); ) {
+                Sale sale = iterator.next();
+                if (sale.getId() == id) {
+                    iterator.remove();
+                    System.out.println(sale.getName() + " successfully removed from the Shopping Basket");
+                }
             }
-        } catch (Exception e) {
-            System.out.println("Invalid input! Please choose a number from the menu to proceed!");
-            System.out.println("Please try to remove the product again");
+        } catch (Exception ex) {
+            System.out.println("Something went wrong! Please try again!");
             removeFromBasket();
+        }
+    }
+
+    private void displayBasket() {
+        System.out.println(String.format("%-12s%-30s%-12s%-12s%-12s", "PRODUCT_ID ", "PRODUCT_NAME",
+                "QUANTITY", "PRICE", "AMOUNT"));
+        for (Sale sale : totalBasket) {
+            double sumPrice = (sale.getPrice() * sale.getQuantity());
+            System.out.println(String.format("%-12s%-30s%-12s%-12s%-12s", sale.getId(), sale.getName(), +
+                    (int) sale.getQuantity(), sale.getPrice(), df.format(sumPrice)));
         }
     }
 
@@ -154,6 +165,5 @@ public class ShoppingBasket {
 
     public void clearShoppingBasket() {
         totalBasket.clear();
-        System.out.println("Shopping Basket successfully cleared!");
     }
 }
