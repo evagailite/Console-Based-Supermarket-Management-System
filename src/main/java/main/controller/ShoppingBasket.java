@@ -13,15 +13,18 @@ import java.util.Scanner;
 public class ShoppingBasket {
     private DecimalFormat df = new DecimalFormat("0.00");
     private Scanner scanner = new Scanner(System.in);
-    private Sale sale;
+  //  private Sale sale;
     private ArrayList<Sale> totalBasket = new ArrayList<>();
-    private Warehouse warehouse;
-    private DataBase dataBase;
+  //  private Warehouse warehouse;
+    private DataBase dataBase = new DataBase();
 
-    public ShoppingBasket(Warehouse warehouse, DataBase dataBase, Sale sale) {
-        this.warehouse = warehouse;
-        this.dataBase = dataBase;
-        this.sale = sale;
+//    public ShoppingBasket(Warehouse warehouse, DataBase dataBase, Sale sale) {
+//        this.warehouse = warehouse;
+//        this.dataBase = dataBase;
+//        this.sale = sale;
+//    }
+
+    public ShoppingBasket() {
     }
 
     public void addProductsInTheShoppingBasket(String username) {

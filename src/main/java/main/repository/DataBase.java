@@ -11,7 +11,7 @@ public class DataBase {
     private static Scanner scanner = new Scanner(System.in);
     private Connection connection;
     // JDBC driver name and database URL
-    private static final String DB_URL = "jdbc:h2:D:\\AccentureBootcamp2021\\projects\\supermarket";
+    private static final String DB_URL = "jdbc:h2:C:\\Users\\User\\Dropbox\\Programming\\AccentureBootcamp2021\\projects\\supermarket";
     //  Database credentials
     private static final String USER = "sa";
     private static final String PASS = "";

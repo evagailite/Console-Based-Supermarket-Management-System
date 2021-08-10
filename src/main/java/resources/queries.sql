@@ -78,3 +78,22 @@ where QUANTITY =0;
 
 ALTER TABLE  TABLE_PRODUCTS DROP  PRODUCT_ID;
 ALTER TABLE PRODUCTS ADD PRODUCT_ID  int UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY FIRST;
+
+CREATE TABLE `supermarket`.`user` (
+  `user_id` INT NOT NULL AUTO_INCREMENT,
+  `username` VARCHAR(50) NOT NULL,
+  `password` VARCHAR(45) NOT NULL,
+  `name` VARCHAR(45) NOT NULL,
+  `email` VARCHAR(45) NOT NULL,
+  `budget` DECIMAL(20,2) NULL,
+  `user_type` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`user_id`));
+
+CREATE TABLE `supermarket`.`product` (
+  `product_id` INT NOT NULL AUTO_INCREMENT,
+  `product_name` VARCHAR(45) NOT NULL,
+  `quantity` INT NOT NULL,
+  `price` DECIMAL(20,2) NOT NULL,
+  `unit` VARCHAR(45) NOT NULL,
+  `category` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`product_id`));

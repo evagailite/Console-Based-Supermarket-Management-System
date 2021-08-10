@@ -10,12 +10,15 @@ import java.util.Scanner;
 public class Wallet {
     private final DecimalFormat df = new DecimalFormat("0.00");
     private final Scanner scanner = new Scanner(System.in);
-    private final DataBase dataBase;
-    private final ShoppingBasket shoppingBasket;
+    private final DataBase dataBase = new DataBase();
+    private final ShoppingBasket shoppingBasket = new ShoppingBasket();
+//
+//    public Wallet(DataBase dataBase, ShoppingBasket shoppingBasket) {
+//        this.dataBase = dataBase;
+//        this.shoppingBasket = shoppingBasket;
+//    }
 
-    public Wallet(DataBase dataBase, ShoppingBasket shoppingBasket) {
-        this.dataBase = dataBase;
-        this.shoppingBasket = shoppingBasket;
+    public Wallet() {
     }
 
     public void transferMoney(String username) {

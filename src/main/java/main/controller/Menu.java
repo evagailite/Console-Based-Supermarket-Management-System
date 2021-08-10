@@ -12,12 +12,12 @@ import java.util.Scanner;
 public class Menu {
     private DecimalFormat df = new DecimalFormat("0.00");
     private Scanner scanner = new Scanner(System.in);
-    private DataBase dataBase;
-    private Warehouse warehouse;
-    private Users users;
-    private ShoppingBasket shoppingBasket;
+    private DataBase dataBase = new DataBase();
+    private Warehouse warehouse = new Warehouse();
+    private Users users = new Users();
+    private ShoppingBasket shoppingBasket = new ShoppingBasket();
     private final ArrayList<Sale> totalBasket = new ArrayList<>();
-    private Wallet wallet;
+    private Wallet wallet = new Wallet();
 
     public Menu(DataBase dataBase, Warehouse warehouse,
                 Users users, ShoppingBasket shoppingBasket, Wallet wallet) {
@@ -26,6 +26,9 @@ public class Menu {
         this.users = users;
         this.shoppingBasket = shoppingBasket;
         this.wallet = wallet;
+    }
+
+    public Menu() {
     }
 
     public void welcomeMessage() {

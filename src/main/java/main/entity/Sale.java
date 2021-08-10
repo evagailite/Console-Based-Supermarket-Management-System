@@ -1,7 +1,6 @@
 package main.entity;
 
 public class Sale {
-
     private int id;
     private String name;
     private int quantity;

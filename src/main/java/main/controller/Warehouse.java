@@ -11,13 +11,16 @@ import java.util.Scanner;
 
 public class Warehouse {
     private final Scanner scanner = new Scanner(System.in);
-    private Users users;
-    private Product product;
-    private final DataBase dataBase;
+    private Users users = new Users();
+    private Product product = new Product();
+    private  DataBase dataBase = new DataBase();
 
     public Warehouse(Product product, DataBase dataBase) {
         this.product = product;
         this.dataBase = dataBase;
+    }
+
+    public Warehouse() {
     }
 
     public void addProduct() {
@@ -216,7 +219,6 @@ public class Warehouse {
         System.out.println("\nGross sales of all orders with VAT included: $" + dataBase.sumTotalPurchase());
         System.out.println("\nIn total " + dataBase.countOrders() + " orders were placed in the Supermarket:");
         dataBase.displayAllSalesReport();
-
     }
 
     public void setActiveUser(Users activeUsers) {
