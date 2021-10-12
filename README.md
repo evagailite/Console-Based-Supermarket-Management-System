@@ -1,5 +1,7 @@
 # Console based Supermarket Management System
 
+Information has been stored using h2DB
+
 Console outputs:
 
 <img src="images/welcomeView.PNG">
